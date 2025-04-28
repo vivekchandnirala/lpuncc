@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Page</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div style="text-align: right; margin-bottom: 10px;">
+        <button onclick="logout()" style="background:#ff4d4d; color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer;">Logout</button>
+      </div>
+      
+    <h1>Admin Control Page</h1>
+
+    <div class="toggle-container">
+        <label for="toggleEnrollment"><b>Enable Enrollment:</b></label>
+        <label class="switch">
+            <input type="checkbox" id="toggleEnrollment">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <a href="../../public/index.html" class="corner-button">Main page</a>
+
+    <!--News code-->
+    <h2>Manage News</h2>
+    <div class="form-group">
+      <input id="newsText" placeholder="News text">
+      <input id="newsURL" placeholder="News URL">
+      <button onclick="addNews()">Add News</button>
+    </div>
+  
+    <table id="newsTable">
+      <thead>
+        <tr>
+          <th>News Text</th>
+          <th>URL</th>
+          <th>Date Added</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="newsTableBody">
+        <!-- News rows go here -->
+      </tbody>
+    </table>    
+
+    
+
+    <h2>Total Registrations</h2>
+    <button id="viewRegistrations">View Total Registrations</button>
+    <button id="downloadData">Download Data</button>
+
+    <table id="registrationsTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Registration No</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody id="registrationsBody">
+        </tbody>
+    </table>
+    <script src="admin.js"></script>
+    <script>
+        if (localStorage.getItem("isAdminLoggedIn") !== "true") {
+          window.location.href = "./login page/login.html";
+        }
+      </script>
+      
+</body>
+</html>

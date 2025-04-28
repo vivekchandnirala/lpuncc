@@ -1,0 +1,247 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    margin: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+
+  /*dashboard button*/
+  .corner-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .corner-button:hover {
+    background-color: #45a049;
+  }
+
+
+
+  /* Buttons */
+  button {
+    font-size: 14px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 10px 5px;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Logout Button */
+  div[style*="text-align: right"] {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  
+  div[style*="text-align: right"] button {
+    background-color: #e74c3c;
+    display: inline-block;
+    float: none !important;
+  }
+  
+  /* Toggle Switch */
+  .toggle-container {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Toggle Styles */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2ecc71;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+  
+  /* Form Group Container */
+  .form-group {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+    margin: 20px auto;
+    display: inline-block;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .form-group button {
+    background-color: #3498db;
+    color: white;
+  }
+  
+
+
+
+  /* News Table */
+  #newsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+    margin: 0 auto 30px;
+  }
+  
+  #newsTable thead {
+    background-color: #2980b9;
+    color: white;
+  }
+  
+  #newsTable th, #newsTable td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+  }
+  
+  #newsTable tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .editable {
+    background-color: #fdfdfd;
+    cursor: text;
+  }
+  
+  .editable:focus {
+    outline: 2px solid #189bff;
+    background-color: #fff;
+  }
+  td input[type="text"] {
+    width: 100%;
+    padding: 4px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .actions button {
+    margin-right: 5px;
+  }  
+  .save {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+    
+  
+
+
+
+  /* Total Registrations */
+  #viewRegistrations, #downloadData {
+    background-color: #27ae60;
+    color: white;
+  }
+  
+  #downloadData {
+    background-color: #8e44ad;
+  }
+  
+  /* Registrations Table */
+  #registrationsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+    margin: 20px auto;
+  }
+  
+  #registrationsTable thead {
+    background-color: #2c3e50;
+    color: white;
+  }
+  
+  #registrationsTable th, #registrationsTable td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+  }
+  
+  #registrationsTable tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Remove Button (table actions) */
+  table button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  
+  
