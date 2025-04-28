@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
 
 // Middleware
 app.use(express.json());
@@ -33,7 +32,7 @@ const EnrollmentSchema = new mongoose.Schema({
 });
 const Enrollment = mongoose.model("Enrollment", EnrollmentSchema);
 
-// 📌 Get enrollment status
+// 📌 API Routes (same as your original routes)
 app.get("/api/enrollment", async (req, res) => {
     try {
         let enrollment = await Enrollment.findOne();
@@ -48,7 +47,6 @@ app.get("/api/enrollment", async (req, res) => {
     }
 });
 
-// 📌 Toggle enrollment status
 app.post("/api/enrollment", async (req, res) => {
     try {
         let enrollment = await Enrollment.findOne();
@@ -93,12 +91,11 @@ app.post("/api/register", async (req, res) => {
     }
 });
 
-// 📌 Delete a registration with proper error handling
+// 📌 Delete a registration
 app.delete("/api/registrations/:id", async (req, res) => {
     try {
         const { id } = req.params;
 
-        // Validate if ID is a valid MongoDB ObjectId
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(400).json({ message: "Invalid registration ID" });
         }
@@ -116,7 +113,5 @@ app.delete("/api/registrations/:id", async (req, res) => {
     }
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-});
+// 📌 Export the handler for Vercel to use in serverless functions
+module.exports = app;
