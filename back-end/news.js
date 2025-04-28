@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Connect to MongoDB (update credentials if needed)
+// Connect to MongoDB (using hardcoded credentials)
 mongoose.connect('mongodb+srv://NEWS:2004@newsdata.jqekrq2.mongodb.net/?retryWrites=true&w=majority&appName=NEWSDATA', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -94,8 +94,5 @@ app.delete('/api/news/:id', async (req, res) => {
   }
 });
 
-// Start the server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
-});
+// Export the app to work with Vercel's serverless function system
+module.exports = app;
