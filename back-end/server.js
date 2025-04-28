@@ -32,7 +32,7 @@ const EnrollmentSchema = new mongoose.Schema({
 });
 const Enrollment = mongoose.model("Enrollment", EnrollmentSchema);
 
-// 📌 API Routes (same as your original routes)
+// 📌 Get enrollment status
 app.get("/api/enrollment", async (req, res) => {
     try {
         let enrollment = await Enrollment.findOne();
@@ -47,6 +47,7 @@ app.get("/api/enrollment", async (req, res) => {
     }
 });
 
+// 📌 Toggle enrollment status
 app.post("/api/enrollment", async (req, res) => {
     try {
         let enrollment = await Enrollment.findOne();
@@ -91,11 +92,12 @@ app.post("/api/register", async (req, res) => {
     }
 });
 
-// 📌 Delete a registration
+// 📌 Delete a registration with proper error handling
 app.delete("/api/registrations/:id", async (req, res) => {
     try {
         const { id } = req.params;
 
+        // Validate if ID is a valid MongoDB ObjectId
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(400).json({ message: "Invalid registration ID" });
         }
@@ -113,5 +115,5 @@ app.delete("/api/registrations/:id", async (req, res) => {
     }
 });
 
-// 📌 Export the handler for Vercel to use in serverless functions
+// Export the app to work with Vercel's serverless function system
 module.exports = app;
