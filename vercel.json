@@ -1,16 +1,31 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "public/**/*",
-        "use": "@vercel/static"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/public/$1"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "back-end/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "back-end/news.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/api/server",
+      "dest": "/back-end/server.js"
+    },
+    {
+      "src": "/api/news",
+      "dest": "/back-end/news.js"
+    }
+  ]
+}
