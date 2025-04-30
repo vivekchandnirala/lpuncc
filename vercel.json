@@ -1,35 +1,13 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "back-end/server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "back-end/news.js",
-      "use": "@vercel/node"
-    }
+    { "src": "back-end/*.js", "use": "@vercel/node" },
+    { "src": "public/**/*", "use": "@vercel/static" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/registration-system/$1"
-    },
-    {
-      "src": "/api/registrations",
-      "dest": "/back-end/server.js"
-    },
-    {
-      "src": "/api/news",
-      "dest": "/back-end/news.js"
-    }
+    { "src": "/api/registrations", "dest": "/back-end/registrations.js" },
+    { "src": "/api/news", "dest": "/back-end/news.js" },
+
+    { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
