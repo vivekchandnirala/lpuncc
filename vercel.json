@@ -20,6 +20,10 @@
       "dest": "/public/$1"
     },
     {
+      "src": "/(.*)",
+      "dest": "/public/registration-system/$1"
+    },
+    {
       "src": "/api/registrations",
       "dest": "/back-end/server.js"
     },
